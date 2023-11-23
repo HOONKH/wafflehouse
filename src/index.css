@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+
+@font-face {
+  font-family: "FjallaOne-Regular";
+  src: url(./fonts/FjallaOne-Regular.ttf);
+}
+@font-face {
+  font-family: "HouseSlant-Regular";
+  src: url(./fonts/HouseSlant-Regular.otf);
+}
+
+@layer components {
+  .wafflebg {
+    @apply bg-[#FFF200];
+  }
+  .waffletext {
+    @apply text-[#fff200];
+  }
+  .fonthouse {
+    @apply font-["FjallaOne-Regular"];
+  }
+  .fontside {
+    @apply font-[HouseSlant-Regular];
+  }
+}
