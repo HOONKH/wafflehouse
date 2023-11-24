@@ -1,10 +1,24 @@
 import { FaPlayCircle, FaStopCircle, FaPauseCircle } from "react-icons/fa";
 import "animate.css/animate.min.css";
+import WOW from "wowjs";
+import { useEffect } from "react";
+import { useState } from "react";
 
 const FadeIn = () => {
+  useEffect(() => {
+    const wow = new WOW.WOW({
+      boxClass: "wow",
+      animateClass: "animated",
+      offset: 0,
+    });
+    wow.init();
+
+    return () => wow.stop();
+  }, []);
+
   return (
     <div className="h-[478px] max-w-screen grid grid-cols-2 justify-items-center pt-24">
-      <div className="h-[318px] w-[440px]  ml-[430px] animate__animated animate__fadeInLeft  ">
+      <div className="h-[318px] w-[440px]  ml-[430px]  wow animate__animated animate__fadeInLeft">
         {/* animate__animated animate__fadeInLeft */}
         <ul>
           <li className="fonthouse text-[26px]">WAFFLE RECORDS</li>
@@ -28,7 +42,7 @@ const FadeIn = () => {
         </ul>
       </div>
 
-      <div className="h-[318px] w-[520px]  mr-[350px] animate__animated animate__fadeInRight ">
+      <div className="h-[318px] w-[520px]  mr-[350px] wow animate__animated animate__fadeInRight ">
         {/* animate__animated animate__fadeInRight */}
         <ul>
           <li className="fonthouse text-[26px]">REGULARS GET THE BEST PERKS</li>

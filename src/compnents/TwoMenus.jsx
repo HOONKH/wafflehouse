@@ -1,9 +1,22 @@
 import { MdNavigateNext } from "react-icons/md";
-
+import WOW from "wowjs";
+import { useEffect } from "react";
+import "animate.css/animate.min.css";
 const TwoMenus = () => {
+  useEffect(() => {
+    const dod = new WOW.WOW({
+      boxClass: "wow",
+      animateClass: "animated",
+      offset: 0.7,
+    });
+    dod.init();
+
+    return () => dod.stop();
+  }, []);
+
   return (
     <div className="max-w-screen h-[650px] -t-18  relative">
-      <ul className="flex justify-center items-center h-[322px] max-w-screen ">
+      <ul className="flex justify-center items-center h-[322px] max-w-screen wow animate__animated animate__fadeIn ">
         <img
           className="h-[322px] grow"
           src="./images/breakfastbg.webp"
@@ -20,7 +33,7 @@ const TwoMenus = () => {
           </button>
         </li>
       </ul>
-      <ul className="flex justify-center items-center mt-3 h-[322px] max-w-screen ">
+      <ul className="flex justify-center items-center mt-3 h-[322px] max-w-screen wow animate__animated animate__fadeIn">
         <img
           className="h-[322px] grow"
           src="./images/burgerbg.jpg"
